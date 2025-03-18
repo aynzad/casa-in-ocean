@@ -8,7 +8,7 @@ import { loaderManager } from "./loader";
 
 export const addCasa = () => {
   const dracoLoader = new DRACOLoader(loaderManager);
-  dracoLoader.setDecoderPath("/libs/draco/");
+  dracoLoader.setDecoderPath(import.meta.env.BASE_URL + "/libs/draco/");
   dracoLoader.preload();
 
   const KTX2_LOADER = new KTX2Loader(loaderManager).setTranscoderPath(
@@ -23,7 +23,7 @@ export const addCasa = () => {
   const casa = new THREE.Group();
 
   gltfLoader.load(
-    "/models/casa.glb",
+    import.meta.env.BASE_URL + "/models/casa.glb",
     (gltf) => {
       const casaHouse = gltf.scene;
       casaHouse.position.set(-3, 3, -3);

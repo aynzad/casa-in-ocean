@@ -17,7 +17,7 @@ const water = new Water(waterGeometry, {
   textureWidth: 512,
   textureHeight: 512,
   waterNormals: new THREE.TextureLoader(loaderManager).load(
-    "/textures/water_normal.jpg",
+    import.meta.env.BASE_URL + "/textures/water_normal.jpg",
     function (texture) {
       texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
     }
